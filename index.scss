@@ -5,7 +5,9 @@ body {
   margin: 0;
 }
 
-*, :before, :after {
+*,
+:before,
+:after {
   box-sizing: border-box;
 }
 
@@ -15,8 +17,23 @@ body {
   margin: auto;
 }
 
+$breakpoint-md: 768px; //Tablet
+$breakpoint-lg: 1280px; //Desktop
+
 .grid {
   // Task 2: your solution
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 320px;
+  justify-content: center;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 320px);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 320px);
+  }
 }
 
 .entity {
@@ -46,4 +63,3 @@ body {
     font-weight: bold;
   }
 }
-
